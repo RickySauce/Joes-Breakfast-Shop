@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+@store = Store.create(name: "Joes Breakfast Cart")
+@inventory = Inventroy.create(store_id: @store.id)
+@inventory.items.build([{type: 'bacon'}, {type: 'egg'}, {type: 'cheese'}])

@@ -8,5 +8,5 @@
 
 
 @store = Store.create(name: "Joes Breakfast Cart")
-@inventory = Inventroy.create(store_id: @store.id)
-@inventory.items.build([{type: 'bacon'}, {type: 'egg'}, {type: 'cheese'}])
+@inventory = Inventory.create(store_id: @store.id)
+@inventory.items.build([{type_name: 'bacon'}, {type_name: 'egg'}, {type_name: 'cheese'}])

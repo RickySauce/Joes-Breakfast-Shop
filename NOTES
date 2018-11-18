@@ -1,0 +1,17 @@
+--------------------LAYOUT-----------------------
+- one store for our demonstration, our store.
+- a store has many transactions
+- a store has many customers through transactions
+- a customer has a name and can have many transactions
+
+- a store has one inventory, an inventory can have many items
+- the items will have a type column eg: bacon, eggs, cheese", and a quantity column.
+- the store's inventory will be responsible for updating the quantity of it's items
+
+- transactions will have a born-on date(time of purchase), customer_id and store_id
+- transactions can have many orders 
+
+- orders will belong to a transaction and have many item_quantities
+- an item_quantities joins table will be created via a find query based through Inventory based on item "type"
+- item_quantities will have an item_id and order_id and a quantity column, responsible for updating the items' inventory
+------------------------------------------------------

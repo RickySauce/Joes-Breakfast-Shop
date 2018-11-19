@@ -8,33 +8,47 @@ class NewTransaction extends Component {
   //orders will have remove buttons responsible for sending back an orders index and splicing it from the array
   // NewTransaciton component will have an add order button to create another order slot.
 
-  state = {orders: [{}]}
+  state = {orders: [{bacon:0, egg:0, cheese:0}]}
 
   mapOrders = () => {
-    return this.state.orders.map((order, index)=> <Order handleRemove={this.handleRemove} index={index}/>)
+    return this.state.orders.map((order, index)=> <Order key={index} handleRemove={this.handleRemove} handleChange={this.handleChange} index={index} order={order}/>)
   }
 
   handleAdd = () => {
-    this.setState({orders: [...this.state.orders, {}]})
+    this.setState({orders: [...this.state.orders, {bacon:0, egg:0, cheese:0}]})
   }
 
   handleRemove = (index) => {
     if(this.state.orders.length > 1){
       let orders = this.state.orders
-      orders.splice(index,1)
+      debugger;
+      orders.splice(index, 1)
       this.setState({orders: orders})
     } else {
       alert("A transaction must have at least one order")
     }
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+  }
+
+  handleChange = (index, event) => {
+    let orders = this.state.orders
+    orders[index] = {...orders[index], [event.target.id]: event.target.value}
+    this.setState({orders: orders})
+  }
+
   render() {
-    console.log(this.state)
     return (
       <div>
         New Transaction:
-        {this.mapOrders()}
-        <button onClick={this.handleAdd}>Add another order</button>
+        <form onSubmit={this.handleSubmit}>
+          {this.mapOrders()}
+          <br/><br/>
+          <button onClick={this.handleAdd}>Add another order</button>
+         <input type="submit" value="Submit Transaction"/>
+        </form>
       </div>
     );
   }

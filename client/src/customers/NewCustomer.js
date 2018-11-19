@@ -12,12 +12,22 @@ class NewCustomer extends Component {
 
    handleSubmit = (event) => {
     event.preventDefault()
-
+    let data = JSON.stringify({customer: this.state.customer})
+      fetch('/customers', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: data
+    })
+    .then(res => res.json())
+    .then(json => this.props.customerCreated(json))
   };
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
       <input
        onChange={this.handleChange}
        id="customer"

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import NewCustomer from './NewCustomer'
+import ReturningCustomers from './ReturningCustomers'
 
 class CustomersContainer extends Component {
 
-  state = {selection: ''}
+  state = {selection: '', defaultCustomer: ''}
 
   handleClick = (event) => {
     //button clicked will set state to either "New Customer" or "Returning Customer"
@@ -17,19 +18,20 @@ class CustomersContainer extends Component {
 
   renderButtonsOrForms = () => {
     switch(this.state.selection){
-      case '':
-        return <span> <button onClick={this.handleClick}>New Customer</button> <button onClick={this.handleClick}>Returning Customer</button> </span>
 
       case 'New Customer':
         return <NewCustomer customerCreated={this.customerCreated}/>
 
       case 'Returning Customer':
-        return <p>Returning Customer</p>
+        return <ReturningCustomers defaultCustomer={this.state.defaultCustomer} handleClick={this.handleClick} />
+
+      default:
+        return <span> <button onClick={this.handleClick}>New Customer</button> <button onClick={this.handleClick}>Returning Customer</button> </span>
     }
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.state.defaultCustomer)
     return (
       <div>
       {this.renderButtonsOrForms()}

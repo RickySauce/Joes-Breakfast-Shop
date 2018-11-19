@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.3.6'
 
+gem 'foreman', '~> 0.82.0'
 gem 'jquery-rails'
 gem 'active_model_serializers'
 gem 'rails', '~> 5.2.1'

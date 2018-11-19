@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Order = ({index}) => {
+const Order = ({index, handleRemove}) => {
 
  return (
    <div>
-     Order #{index + 1}
+     Order #{index + 1} <button onClick={handleRemove}>Remove order</button>
    </div>
  );
 }

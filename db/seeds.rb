@@ -10,3 +10,4 @@
 @store = Store.create(name: "Joes Breakfast Cart")
 @inventory = Inventory.create(store_id: @store.id)
 @inventory.items.build([{type_name: 'bacon'}, {type_name: 'egg'}, {type_name: 'cheese'}])
+@inventory.save

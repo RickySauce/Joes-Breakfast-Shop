@@ -5,10 +5,10 @@ const OrderField = ({item, value, index, handleChange}) => {
 
  return (
    <>
-   <label> pieces of Bacon: </label>
+   <label> Units of {item}: </label>
     <input
      onChange={(event) => handleChange(index, event)}
-     id="bacon"
+     id={item}
      placeholder={value}
      value={value}
      type="number"/><br/>

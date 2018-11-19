@@ -31,6 +31,16 @@ class NewTransaction extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    let data = JSON.stringify({transaction: this.state.orders})
+      fetch('/transactions', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: data
+    })
+    .then(res => res.json())
   }
 
   handleChange = (index, event) => {

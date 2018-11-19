@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :customers, only: [:create, :index]
   resources :store, only: [:index]
   resources :inventory, only: [:show]
-  resources :transactions, only: [:new, :create, :show, :index]
+  resources :transactions, only: [:create, :show, :index]
 end

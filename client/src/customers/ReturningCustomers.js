@@ -26,7 +26,10 @@ class ReturningCustomers extends Component {
 
   renderDropDown = () => {
     if (this.state.customerList.length > 0){
-      return  <CustomerList list={this.state.customerList} defaultCustomerId={this.props.defaultCustomer.id} handleChange={this.handleChange}/>
+      return  <>
+              <CustomerList list={this.state.customerList} defaultCustomerId={this.props.defaultCustomer.id} handleChange={this.handleChange}/>
+              <NewTransaction/>
+              </>
     } else if (this.state.loading === false) {
       return <span> No existing customers please set up a new account: <button onClick={this.props.handleClick}>New Customer</button> </span>
     }
@@ -36,7 +39,6 @@ class ReturningCustomers extends Component {
     return (
       <div>
         {this.renderDropDown()}
-        <NewTransaction/>
       </div>
     );
   }

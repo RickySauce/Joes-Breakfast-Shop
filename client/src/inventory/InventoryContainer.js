@@ -18,9 +18,9 @@ class InventoryContainer extends Component {
 
   render() {
     return (
-      <div style={{display : 'inline-block'}}>
-      {this.renderInventoryList()}
+      <div style={{display : 'inline-block', float:'right', marginRight:'40px', marginLeft:'40px'}}>
       <button onClick={this.handleClick}>Retrieve Inventory</button>
+      {this.renderInventoryList()}
       </div>
     );
   }

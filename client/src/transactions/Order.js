@@ -13,11 +13,11 @@ class Order extends Component {
 
 render() {
    return (
-     <div>
+     <p style={{fontSize:'16px'}}>
        <h5>Order #{this.props.index + 1}</h5>
         {this.mapOrder()}
         <button onClick={() => this.props.handleRemove(this.props.index)}>Remove order</button>
-     </div>
+     </p>
    );
   }
 }

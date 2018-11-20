@@ -19,7 +19,7 @@ class TransactionsContainer extends Component {
 
   render() {
     return (
-      <div style={{display : 'inline-block', padding: '40px'}}>
+      <div style={{display : 'inline-block', float:'right', fontSize:'20px', textAlign:'right'}}>
         <TransactionsSearch handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
         <TransactionsList transactions={this.state.transactions}/>
       </div>

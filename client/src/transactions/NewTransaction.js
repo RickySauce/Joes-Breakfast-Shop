@@ -57,7 +57,7 @@ class NewTransaction extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{fontSize:'24px', textAlign: 'left'}}>
         New Transaction:
         <form onSubmit={this.handleSubmit}>
           {this.mapOrders()}

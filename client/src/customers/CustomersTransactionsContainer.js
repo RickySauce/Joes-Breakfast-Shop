@@ -19,7 +19,7 @@ class CustomersTransactionsContainer extends Component {
 
   render() {
     return (
-      <div style={{display : 'inline-block'}}>
+      <div style={{display : 'inline-block', float:'center'}}>
         {this.renderButtons()}
       </div>
     );

@@ -41,6 +41,7 @@ class NewTransaction extends Component {
       body: data
     })
     .then(res => res.json())
+    .then(json => console.log(json))
   }
 
   handleChange = (index, event) => {

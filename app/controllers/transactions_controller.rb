@@ -49,7 +49,7 @@ class TransactionsController < ApplicationController
       render :json => @transactions, include: 'orders.item_quantities', status: 200
     else
       render :json => @transactions, status: 404
-    end 
+    end
   end
 
 end

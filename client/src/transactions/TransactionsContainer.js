@@ -12,11 +12,12 @@ class TransactionsContainer extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     fetch(`/transactions?q=${this.state.query}`)
-    .then(res => res.json())
-    .then(json => console.log(json))
+    .then(res => res.ok ? res.json() : alert("Your store has no transactions at this time, or your search has yielded no results"))
+    .then(json => this.setState({transactions: json}))
   }
 
   render() {
+    console.log(this.state)
     return (
       <div style={{display : 'inline-block', padding: '40px'}}>
         <TransactionsSearch handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>

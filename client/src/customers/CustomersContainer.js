@@ -33,7 +33,7 @@ class CustomersContainer extends Component {
   render() {
     console.log(this.state.defaultCustomer)
     return (
-      <div>
+      <div style={{display : 'inline-block'}}>
       {this.renderButtonsOrForms()}
       </div>
     );

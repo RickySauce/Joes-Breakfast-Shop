@@ -35,10 +35,12 @@ class TransactionsController < ApplicationController
       @transaction.save
       render :json => @transaction, include: 'orders.item_quantities', status: 201
     else
-      binding.pry
       render :json => @transaction, status: 422
     end
+  end
 
+  def index
+    binding.pry
   end
 
 end

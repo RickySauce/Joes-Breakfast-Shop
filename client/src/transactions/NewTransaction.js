@@ -57,9 +57,9 @@ class NewTransaction extends Component {
         <form onSubmit={this.handleSubmit}>
           {this.mapOrders()}
           <br/><br/>
-          <button onClick={this.handleAdd}>Add another order</button>
          <input type="submit" value="Submit Transaction"/>
         </form>
+        <button onClick={this.handleAdd}>Add another order</button>
       </div>
     );
   }

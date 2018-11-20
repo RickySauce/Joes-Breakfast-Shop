@@ -3,4 +3,14 @@ class Order < ApplicationRecord
   has_many :item_quantities, inverse_of: :order
 
   accepts_nested_attributes_for :item_quantities
+
+  def type_and_quantity
+    tq = {}
+    self.item_quantities.each do |iq|
+      name = Item.find(iq.item_id).type_name
+      tq[name] = iq.quantity
+    end
+    tq
+  end
+
 end

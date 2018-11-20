@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import TransactionsSearch from './TransactionsSearch'
+import TransactionsList from './TransactionsList'
 
 class TransactionsContainer extends Component {
 
-  state = {query: ''}
+  state = {query: '', transactions:''}
 
   handleChange = (event) => {
     this.setState({[event.target.id]: event.target.value})
@@ -21,6 +22,7 @@ class TransactionsContainer extends Component {
     return (
       <div style={{display : 'inline-block', padding: '40px'}}>
         <TransactionsSearch handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
+        <TransactionsList transactions={this.state.transactions}/>
       </div>
     );
   }

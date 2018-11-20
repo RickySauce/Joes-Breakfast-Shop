@@ -9,4 +9,14 @@ class Transaction < ApplicationRecord
     results = Transaction.where("created_at BETWEEN ? AND ?", date, date + 1)
   end
 
+  def total_type_and_quantity
+    ttq = {}
+    self.orders.each do |order|
+      order.type_and_quantity.each do |key,value|
+        ttq[key] ? ttq[key] += value : ttq[key] = value
+      end
+    end
+    ttq
+  end
+
 end

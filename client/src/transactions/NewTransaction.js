@@ -31,7 +31,7 @@ class NewTransaction extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    let data = JSON.stringify({transaction: this.state.orders})
+    let data = JSON.stringify({transaction: this.state.orders, customer_id: this.props.customerId})
       fetch('/transactions', {
       headers: {
         'Accept': 'application/json',

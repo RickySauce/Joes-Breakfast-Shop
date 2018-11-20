@@ -40,7 +40,16 @@ class TransactionsController < ApplicationController
   end
 
   def index
-    binding.pry
+    if !params["q"].blank?
+      @transactions = Transaction.find_transactions_by_date(params["q"])
+    else
+      @transactions = Transaction.all
+    end
+    if !@transactions.empty?
+      render :json => @transactions, include: 'orders.item_quantities', status: 200
+    else
+      render :json => @transactions, status: 404
+    end 
   end
 
 end

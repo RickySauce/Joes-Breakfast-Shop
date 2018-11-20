@@ -8,7 +8,7 @@ const TransactionsSearch = ({handleSubmit, handleChange}) => {
       onChange={handleChange}
       id="query"
       placeholder="enter date"
-      type="text"/><br/>
+      type="date"/><br/>
       <input type="submit" value="Retrieve Transactions"/>
      </form>
  );

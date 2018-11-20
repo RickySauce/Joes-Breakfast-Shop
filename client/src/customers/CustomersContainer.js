@@ -23,7 +23,7 @@ class CustomersContainer extends Component {
         return <NewCustomer customerCreated={this.customerCreated}/>
 
       case 'Returning Customer':
-        return <ReturningCustomers defaultCustomer={this.state.defaultCustomer} handleClick={this.handleClick} />
+        return <ReturningCustomers defaultCustomer={this.state.defaultCustomer} changeClicked={this.props.changeClicked} handleClick={this.handleClick} />
 
       default:
         return <span> <button onClick={this.handleClick}>New Customer</button> <button onClick={this.handleClick}>Returning Customer</button> </span>
@@ -31,9 +31,8 @@ class CustomersContainer extends Component {
   }
 
   render() {
-    console.log(this.state.defaultCustomer)
     return (
-      <div style={{display : 'inline-block'}}>
+      <div>
       {this.renderButtonsOrForms()}
       </div>
     );

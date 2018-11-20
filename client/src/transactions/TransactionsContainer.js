@@ -18,7 +18,6 @@ class TransactionsContainer extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div style={{display : 'inline-block', padding: '40px'}}>
         <TransactionsSearch handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>

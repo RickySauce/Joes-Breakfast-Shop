@@ -40,8 +40,13 @@ class NewTransaction extends Component {
       method: "POST",
       body: data
     })
-    .then(res => res.json())
-    .then(json => console.log(json))
+    .then(res => res.ok ? res.json() : alert("Transaction failed! please check to see you have atleast one valid order"))
+    .then(json => json ? this.transactionSuccesful() : null)
+  }
+
+  transactionSuccesful = () => {
+    this.props.changeClicked()
+    alert("Transaction Successful!")
   }
 
   handleChange = (index, event) => {

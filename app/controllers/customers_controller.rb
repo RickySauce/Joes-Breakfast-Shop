@@ -4,7 +4,7 @@ class CustomersController < ApplicationController
     #the app is not concerned with a customers name, only whether they've purchased something before
     #while it would be nice for the store to become acquainted with all of their customers on a personal level
     # it is not a requirement.
-    fields = params["customer"] ? {name: params["customer"]} : nil
+    fields = !params["customer"].blank? ? {name: params["customer"]} : nil
     @customer =  Customer.create(fields)
     render :json => @customer, status: 201
   end

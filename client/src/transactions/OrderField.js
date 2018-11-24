@@ -11,6 +11,7 @@ const OrderField = ({item, value, index, handleChange}) => {
      id={item}
      placeholder={value}
      value={value}
+     min='0'
      type="number"/><br/>
      </>
  );

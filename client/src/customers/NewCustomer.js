@@ -31,7 +31,7 @@ class NewCustomer extends Component {
       <input
        onChange={this.handleChange}
        id="customer"
-       placeholder="customer name"
+       placeholder="customer name(optional)"
        type="text"/><br/>
        <input type="submit" value="Create Customer"/>
       </form>
